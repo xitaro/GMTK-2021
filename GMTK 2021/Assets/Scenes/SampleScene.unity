@@ -582,6 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
+  startSpeed: 10
 --- !u!136 &1419396053
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -750,7 +751,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1173,5 +1174,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog
       objectReference: {fileID: 0}
+    - target: {fileID: 4162080528222324632, guid: 740d9d880bde5ed468e05356e9d1a193,
+        type: 3}
+      propertyPath: timePerformingAction
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162080528222324632, guid: 740d9d880bde5ed468e05356e9d1a193,
+        type: 3}
+      propertyPath: ground
+      value: 
+      objectReference: {fileID: 1419396049}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 740d9d880bde5ed468e05356e9d1a193, type: 3}

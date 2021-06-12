@@ -4,38 +4,37 @@ using System.Collections;
 
 public class DogAction : MonoBehaviour
 {
+    DogMovement dogMovement;
+    [SerializeField] Ground ground;
+    [SerializeField] private float timePerformingAction;
+
+    private void Start()
+    {
+        dogMovement = GetComponent<DogMovement>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         Interactable interactable = other.GetComponent<Interactable>(); 
         if (interactable != null)
         {
-            interactable.action.Invoke();
+            PerformAction(interactable.animation);
         }
     }
 
-    public void Bark()
+    private void PerformAction(string animationToPerform)
     {
-        Debug.Log("Bark");
+        // animator.CrossFade(animationToPerform);
+        Debug.Log("action being performed: " + animationToPerform);
+        dogMovement.isPerformingAction = true;
+        ground.speed = 0;
+        StartCoroutine(ground.ResetSpeed(timePerformingAction));
+        StartCoroutine(EndAction(timePerformingAction));
     }
 
-    public void Pee()
+    private IEnumerator EndAction(float waitTime)
     {
-        Debug.Log("Pee");
-    }
-
-    public void Poop()
-    {
-        Debug.Log("Poop");
-    }
-
-    public void PokeAround()
-    {
-        Debug.Log("Poke");
-    }
-
-    public void DrinkWater()
-    {
-        Debug.Log("Drink");
+        yield return new WaitForSeconds(waitTime);
+        dogMovement.isPerformingAction = false;
     }
 }

@@ -11,11 +11,13 @@ public class DogStates : MonoBehaviour
         state = 3;
     }
 
+    // Call on animation event
     public void IncreaseState()
     {
         state += 1;
     }
 
+    // Call on animation event
     public void DecreaseState()
     {
         state -= 1;

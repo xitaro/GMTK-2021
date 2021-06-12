@@ -5,6 +5,8 @@ public class DogMovement : MonoBehaviour
     [SerializeField] private float speed;
     private Vector3 direction;
 
+    public bool isPerformingAction;
+
     private Rigidbody rb;
 
     private void Start()
@@ -14,12 +16,15 @@ public class DogMovement : MonoBehaviour
 
     private void Update()
     {
-        direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+            direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
     }
 
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + transform.TransformDirection(direction) * speed * Time.deltaTime);
+        if (!isPerformingAction)
+        {
+            rb.MovePosition(rb.position + transform.TransformDirection(direction) * speed * Time.deltaTime);
+        }
     }
 }
