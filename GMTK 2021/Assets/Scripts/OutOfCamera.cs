@@ -6,6 +6,9 @@ public class OutOfCamera : MonoBehaviour
 {
     private void OnTriggerEnter(Collider col)
     {
-        Destroy(col.gameObject);
+        if (col.tag != "Ground")
+        {
+            Destroy(col.gameObject);
+        }
     }
 }
