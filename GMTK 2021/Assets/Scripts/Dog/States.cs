@@ -10,6 +10,8 @@ public class States : MonoBehaviour
     [SerializeField] private Image stateImage;
     [SerializeField] private Sprite[] stateSprites;
 
+    [SerializeField] private GameManager gm;
+
     private void Start()
     {
         state = 3;
@@ -42,6 +44,7 @@ public class States : MonoBehaviour
         if (state == 0)
         {
             //Game Over
+            gm.GameOver();
         }
     }
 

@@ -15,6 +15,7 @@ public class DogAction : MonoBehaviour
     {
         dogMovement = GetComponent<DogMovement>();
         anim = GetComponentInChildren<Animator>();
+        ground = GameObject.Find("Ground").GetComponent<Ground>();
     }
 
     private void OnTriggerEnter(Collider other)
