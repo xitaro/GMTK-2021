@@ -2,12 +2,17 @@
 
 public class Body : MonoBehaviour
 {
-    [SerializeField] private GravityAttractor attractor;
+    private GravityAttractor attractor;
     public Rigidbody rb;
+
+    private void Awake()
+    {
+        attractor = GameObject.Find("Ground").GetComponent<GravityAttractor>();
+        rb = GetComponent<Rigidbody>();
+    }
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         rb.useGravity = false;
     }

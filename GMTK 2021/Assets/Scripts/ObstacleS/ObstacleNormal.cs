@@ -14,7 +14,7 @@ public class ObstacleNormal : MonoBehaviour
     {
         transform.SetParent(Ground);
     }
-
+    
     public void FixedUpdate()
     {
         RaycastHit hit;
