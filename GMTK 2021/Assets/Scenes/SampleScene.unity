@@ -167,8 +167,10 @@ MonoBehaviour:
   waves:
   - items:
     - {fileID: 4485556160061385132, guid: 10a70ec333a327145b5b915396660b53, type: 3}
+    - {fileID: 4485556160061385132, guid: 650a1257963d1e143b41ba918a318e98, type: 3}
+    - {fileID: 4485556160061385132, guid: 0d451bd50e6ea4c40af05cd884b3fb51, type: 3}
     numberOfItems: 5
-    timeBetweenSpawns: 10
+    timeBetweenSpawns: 5
   itemSpawnPoints:
   - {fileID: 809575057}
   - {fileID: 1022490150}
@@ -1283,12 +1285,12 @@ PrefabInstance:
     - target: {fileID: 2220735574251947242, guid: 740d9d880bde5ed468e05356e9d1a193,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.29999998
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2220735574251947242, guid: 740d9d880bde5ed468e05356e9d1a193,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2220735574251947242, guid: 740d9d880bde5ed468e05356e9d1a193,
         type: 3}
@@ -1325,6 +1327,11 @@ PrefabInstance:
       propertyPath: ground
       value: 
       objectReference: {fileID: 1419396049}
+    - target: {fileID: 4162080528222324632, guid: 740d9d880bde5ed468e05356e9d1a193,
+        type: 3}
+      propertyPath: timePerformingAction
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9029260568348600989, guid: 740d9d880bde5ed468e05356e9d1a193,
         type: 3}
       propertyPath: m_Camera
@@ -1373,7 +1380,7 @@ Transform:
   m_GameObject: {fileID: 3936248711825231739}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.1, y: 4.08, z: -2.868}
-  m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 8101744357474747370}
   m_Father: {fileID: 0}
@@ -1488,7 +1495,7 @@ GameObject:
   - component: {fileID: 3936248711825231717}
   m_Layer: 0
   m_Name: Owner
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

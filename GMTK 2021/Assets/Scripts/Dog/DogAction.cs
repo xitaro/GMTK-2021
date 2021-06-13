@@ -19,6 +19,7 @@ public class DogAction : MonoBehaviour
         if (interactable != null)
         {
             PerformAction(interactable.animation);
+            other.isTrigger = false;
         }
     }
 
