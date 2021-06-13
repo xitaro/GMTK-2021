@@ -15,6 +15,7 @@ public class States : MonoBehaviour
     private void Start()
     {
         ownerStates = GameObject.Find("Owner").GetComponent<OwnerStates>();
+        gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
         state = 3;
         stateImage.gameObject.SetActive(false);
     }

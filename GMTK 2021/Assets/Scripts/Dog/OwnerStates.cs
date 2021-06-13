@@ -13,6 +13,7 @@ public class OwnerStates : MonoBehaviour
 
     private void Start()
     {
+        gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
         state = 0;
         stateImage.gameObject.SetActive(false);
     }
