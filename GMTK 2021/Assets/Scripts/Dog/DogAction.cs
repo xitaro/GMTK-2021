@@ -8,6 +8,8 @@ public class DogAction : MonoBehaviour
     [SerializeField] Ground ground;
     [SerializeField] private float timePerformingAction;
 
+    [SerializeField] TaskManager taskManager;
+
     private void Start()
     {
         dogMovement = GetComponent<DogMovement>();
@@ -15,6 +17,11 @@ public class DogAction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject == taskManager.goalGameObject)
+        {
+            taskManager.TaskCompleted();
+        }
+        
         Interactable interactable = other.GetComponent<Interactable>(); 
         if (interactable != null)
         {

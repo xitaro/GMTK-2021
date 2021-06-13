@@ -35,7 +35,6 @@ public class DogMovement : MonoBehaviour
     private void CheckDistance()
     {
         float distance = Vector3.Distance(owner.position, transform.position);
-        Debug.Log(distance);
 
         if(distance > maxDistance)
         {

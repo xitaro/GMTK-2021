@@ -25,6 +25,7 @@ public class DogStates : MonoBehaviour
         {
             state = 3;
         }
+        StartCoroutine(HideUI());
     }
 
     // Call on animation event
@@ -33,6 +34,7 @@ public class DogStates : MonoBehaviour
         ShowStateUI();
         state -= 1;
         CheckState();
+        StartCoroutine(HideUI());
     }
 
     private void CheckState()
@@ -70,5 +72,11 @@ public class DogStates : MonoBehaviour
         }
 
         stateImage.gameObject.SetActive(true);
+    }
+
+    private IEnumerator HideUI()
+    {
+        yield return new WaitForSeconds(1.5f);
+        stateImage.gameObject.SetActive(false);
     }
 }
