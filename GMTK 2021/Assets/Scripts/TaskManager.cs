@@ -32,7 +32,7 @@ public class TaskManager : MonoBehaviour
         
         taskImage.SetActive(false);
 
-        StartCoroutine(TimerToNewGoal(timeToNextGoal));
+        StartCoroutine(TimerToNewGoal(10));
     }
 
 
@@ -77,6 +77,8 @@ public class TaskManager : MonoBehaviour
     {
         Debug.Log("Task Completed");
         taskInProgress = false;
+        // Increase dog's satisfaction
+        dogStates.IncreaseState();
         // Disable pop up
         taskImage.SetActive(false);
         //

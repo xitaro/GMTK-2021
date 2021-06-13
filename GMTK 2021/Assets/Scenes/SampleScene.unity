@@ -1200,8 +1200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497cf7e2ef7d76541a63c0a2bc888279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 5
-  timeToNextGoal: 3
+  startTime: 7
+  timeToNextGoal: 7
   taskImage: {fileID: 1983882173}
   progressBar: {fileID: 1397715053}
   goalGameObject: {fileID: 0}
