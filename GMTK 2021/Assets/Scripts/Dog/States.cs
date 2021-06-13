@@ -11,9 +11,10 @@ public class States : MonoBehaviour
     [SerializeField] private Sprite[] stateSprites;
 
     [SerializeField] private GameManager gm;
-
+    [SerializeField] private OwnerStates ownerStates;
     private void Start()
     {
+        ownerStates = GameObject.Find("Owner").GetComponent<OwnerStates>();
         state = 3;
         stateImage.gameObject.SetActive(false);
     }
@@ -39,6 +40,11 @@ public class States : MonoBehaviour
         StartCoroutine(HideUI());
     }
 
+    public void IncreaseOwnerAnger()
+    {
+        ownerStates.IncreaseAnger();
+    }
+
     private void CheckState()
     {
         if (state == 0)
@@ -55,22 +61,18 @@ public class States : MonoBehaviour
             case 3:
                 // Change State Image
                 stateImage.sprite = stateSprites[3];
-                stateImage.color = Color.green;
                 break;
             case 2:
                 // Change State Image
                 stateImage.sprite = stateSprites[2];
-                stateImage.color = Color.yellow;
                 break;
             case 1:
                 // Change State Image
                 stateImage.sprite = stateSprites[1];
-                stateImage.color = Color.red;
                 break;
             case 0:
                 // Change State Image
                 stateImage.sprite = stateSprites[0];
-                stateImage.color = Color.black;
                 break;
         }
 

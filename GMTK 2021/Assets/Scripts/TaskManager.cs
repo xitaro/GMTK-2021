@@ -23,7 +23,7 @@ public class TaskManager : MonoBehaviour
     private void Awake()
     {
         var dog = GameObject.Find("Dog");
-        dogStates = dog.GetComponent<States>();
+        dogStates = dog.GetComponentInChildren<States>();
     }
 
     private void Start()
