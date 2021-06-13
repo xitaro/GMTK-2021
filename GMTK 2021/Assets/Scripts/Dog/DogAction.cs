@@ -7,12 +7,14 @@ public class DogAction : MonoBehaviour
     DogMovement dogMovement;
     [SerializeField] Ground ground;
     [SerializeField] private float timePerformingAction;
+    [SerializeField] Animator anim;
 
     [SerializeField] TaskManager taskManager;
 
     private void Start()
     {
         dogMovement = GetComponent<DogMovement>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,12 +29,13 @@ public class DogAction : MonoBehaviour
         {
             PerformAction(interactable.animation);
             other.isTrigger = false;
+            other.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 
     private void PerformAction(string animationToPerform)
     {
-        // animator.CrossFade(animationToPerform);
+        anim.CrossFade(animationToPerform, 0.2f);
         Debug.Log("action being performed: " + animationToPerform);
         dogMovement.isPerformingAction = true;
         ground.speed = 0;

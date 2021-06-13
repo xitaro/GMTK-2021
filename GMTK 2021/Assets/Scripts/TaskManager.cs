@@ -16,14 +16,14 @@ public class TaskManager : MonoBehaviour
 
     public GameObject goalGameObject = null;
 
-    private DogStates dogStates;
+    private States dogStates;
 
     private bool taskInProgress;
 
     private void Awake()
     {
         var dog = GameObject.Find("Dog");
-        dogStates = dog.GetComponent<DogStates>();
+        dogStates = dog.GetComponent<States>();
     }
 
     private void Start()

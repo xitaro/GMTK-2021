@@ -9,7 +9,15 @@ public class ObstacleSpawner : MonoBehaviour
 	{
 		public GameObject[] obstacles;
 		public int numberOfObstacles;
-		public float timeBetweenSpawns;
+		private float timeBetweenSpawns;
+		public float minTime;
+		public float maxTime;	
+		
+		public float CalculateTimeBetweenSpawns()
+        {
+			timeBetweenSpawns = Random.Range(minTime, maxTime);
+			return timeBetweenSpawns;
+        }
 	}
 
 	public Wave[] waves;
@@ -30,7 +38,7 @@ public class ObstacleSpawner : MonoBehaviour
 				Transform spawnPoint = obstacleSpawnPoints[Random.Range(0, obstacleSpawnPoints.Length)];
 				GameObject obstacle = waves[i].obstacles[Random.Range(0, waves[i].obstacles.Length)];
 				Instantiate(obstacle, spawnPoint);
-				yield return new WaitForSeconds(waves[i].timeBetweenSpawns);
+				yield return new WaitForSeconds(waves[i].CalculateTimeBetweenSpawns());
 			}
 			if (i == waves.Length - 1)
 			{

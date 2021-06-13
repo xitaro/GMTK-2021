@@ -1,8 +1,25 @@
 ﻿using UnityEngine;
 
-public class PlayerNormal : MonoBehaviour
+public class Normal : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer;
+
+    public bool isKinematic;
+
+    [SerializeField] private Transform Ground;
+
+    private void Awake()
+    {
+        Ground = GameObject.Find("Ground").transform;
+    }
+
+    private void Start()
+    {
+        if (isKinematic)
+        {
+            transform.SetParent(Ground);
+        }
+    }
 
     public void FixedUpdate()
     {

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7055693606081081550}
   - component: {fileID: 7055693606081081544}
   - component: {fileID: 7055693606081081559}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: People
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -113,6 +113,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  isKinematic: 0
+  Ground: {fileID: 0}
 --- !u!114 &7055693606081081550
 MonoBehaviour:
   m_ObjectHideFlags: 0

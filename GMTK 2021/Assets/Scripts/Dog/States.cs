@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DogStates : MonoBehaviour
+public class States : MonoBehaviour
 {
     private int state;
 
