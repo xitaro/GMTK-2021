@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Ground ground;
 
     [SerializeField] private Text distanceText;
+    [SerializeField] private GameObject gameOverPanel;
 
     [SerializeField] private float endGameDistance;
     [SerializeField] private float currentGameDistance;
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentGameDistance = 0;
+        gameOverPanel.SetActive(false);
     }
 
     private void Update()
@@ -28,6 +31,23 @@ public class GameManager : MonoBehaviour
         if(currentGameDistance >= endGameDistance)
         {
             // Ganhou o level!
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
         }
+    }
+
+    public void GameOver()
+    {
+        gameOverPanel.SetActive(true);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
