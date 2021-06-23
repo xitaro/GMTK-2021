@@ -25,7 +25,7 @@ public class DogMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        CheckDistance();
+        //CheckDistance();
         if (!isPerformingAction)
         {
             rb.MovePosition(rb.position + transform.TransformDirection(direction) * speed * Time.deltaTime);

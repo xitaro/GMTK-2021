@@ -1826,7 +1826,7 @@ GameObject:
   - component: {fileID: 2093006313}
   - component: {fileID: 2093006312}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2363,6 +2363,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f8f107a3a1e295a449d1c05ee2d9ad37, type: 3}
   - {fileID: 21300000, guid: f8f107a3a1e295a449d1c05ee2d9ad37, type: 3}
   gm: {fileID: 0}
+  ownerStates: {fileID: 0}
 --- !u!224 &4251473602790885961
 RectTransform:
   m_ObjectHideFlags: 0
