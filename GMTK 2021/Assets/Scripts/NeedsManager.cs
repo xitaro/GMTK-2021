@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TaskManager : MonoBehaviour
+public class NeedsManager : MonoBehaviour
 {
     #region Time variables
     [SerializeField] private float startTime;
@@ -16,14 +16,14 @@ public class TaskManager : MonoBehaviour
 
     public GameObject goalGameObject = null;
 
-    private States dogStates;
+    private Satisfaction dogSatisfaction;
 
     private bool taskInProgress;
 
     private void Awake()
     {
         var dog = GameObject.Find("Dog");
-        dogStates = dog.GetComponentInChildren<States>();
+        dogSatisfaction = dog.GetComponent<Satisfaction>();
     }
 
     private void Start()
@@ -78,7 +78,7 @@ public class TaskManager : MonoBehaviour
         Debug.Log("Task Completed");
         taskInProgress = false;
         // Increase dog's satisfaction
-        dogStates.IncreaseState();
+        dogSatisfaction.IncreaseSatisfaction();
         // Disable pop up
         taskImage.SetActive(false);
         //
@@ -90,7 +90,7 @@ public class TaskManager : MonoBehaviour
         Debug.Log("Test Failed");
         taskInProgress = false;
         // Decrease dog's satisfaction
-        dogStates.DecreaseState();
+        dogSatisfaction.DecreaseSatisfaction();
         // Disable pop up
         taskImage.SetActive(false);
         //Define new Goal

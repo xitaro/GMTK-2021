@@ -9,7 +9,7 @@ public class DogAction : MonoBehaviour
     [SerializeField] private float timePerformingAction;
     [SerializeField] Animator anim;
 
-    [SerializeField] TaskManager taskManager;
+    [SerializeField] NeedsManager needsManager;
 
     private void Start()
     {
@@ -20,9 +20,9 @@ public class DogAction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == taskManager.goalGameObject)
+        if (other.gameObject == needsManager.goalGameObject)
         {
-            taskManager.TaskCompleted();
+            needsManager.TaskCompleted();
         }
         
         Interactable interactable = other.GetComponent<Interactable>(); 

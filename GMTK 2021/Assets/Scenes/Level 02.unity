@@ -1152,6 +1152,20 @@ CapsuleCollider:
   m_Height: 30.011818
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &1097664321
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097664314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4353075598351403174, guid: 2d141b214ea6fab4ba00b1f92392d759, type: 3}
 --- !u!1 &1136610671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,8 +1404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c1effdd792823479e6b295f0b53ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 1.2
-  pullForce: 0.3
+  ownerRb: {fileID: 0}
+  maxDistance: 1.1
+  pullForce: 0.5
 --- !u!1 &1520252472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,7 +1649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915841520}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.39816982, y: 0.10908222, z: 2.032351}
+  m_LocalPosition: {x: 0.39816982, y: 0.10908222, z: 3.221}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 398175720}
@@ -1906,7 +1921,7 @@ GameObject:
   - component: {fileID: 2083670733}
   - component: {fileID: 2083670732}
   m_Layer: 0
-  m_Name: Task Manager
+  m_Name: Needs Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2269,6 +2284,11 @@ PrefabInstance:
       propertyPath: ground
       value: 
       objectReference: {fileID: 1097664316}
+    - target: {fileID: 4162080528222324632, guid: 740d9d880bde5ed468e05356e9d1a193,
+        type: 3}
+      propertyPath: needsManager
+      value: 
+      objectReference: {fileID: 2083670732}
     - target: {fileID: 9029260568348600989, guid: 740d9d880bde5ed468e05356e9d1a193,
         type: 3}
       propertyPath: m_Camera

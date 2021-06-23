@@ -19,26 +19,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5586907786257163663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186335983188039091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a7ba88ace895e4c9677099571c9c85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateImage: {fileID: 9106560906912864023}
-  stateSprites:
-  - {fileID: 21300000, guid: 640425b87a5ea13489c9d7852d179add, type: 3}
-  - {fileID: 21300000, guid: 640425b87a5ea13489c9d7852d179add, type: 3}
-  - {fileID: 21300000, guid: c60a96be11695c14c9f85bd8cb6aff05, type: 3}
-  - {fileID: 21300000, guid: 3910b01bdc73b7a4ba9df21d803e1e40, type: 3}
-  gm: {fileID: 0}
-  ownerStates: {fileID: 0}
 --- !u!1 &1794791191598466076
 GameObject:
   m_ObjectHideFlags: 0
@@ -51,7 +31,7 @@ GameObject:
   - component: {fileID: 5428346898165709612}
   - component: {fileID: 1971039762075374458}
   m_Layer: 10
-  m_Name: Dog Task
+  m_Name: Needs Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,6 +222,7 @@ GameObject:
   - component: {fileID: 2220735574251947244}
   - component: {fileID: 2220735574251947243}
   - component: {fileID: 4162080528222324632}
+  - component: {fileID: 2255178227648802193}
   m_Layer: 10
   m_Name: Dog
   m_TagString: Player
@@ -358,6 +339,24 @@ MonoBehaviour:
   timePerformingAction: 1.5
   anim: {fileID: 0}
   taskManager: {fileID: 0}
+--- !u!114 &2255178227648802193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2220735574251947253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8913da0d16f854581316cea88d76dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  satisfactionImage: {fileID: 9106560906912864023}
+  satisfactionSprites:
+  - {fileID: 21300000, guid: 640425b87a5ea13489c9d7852d179add, type: 3}
+  - {fileID: 21300000, guid: 640425b87a5ea13489c9d7852d179add, type: 3}
+  - {fileID: 21300000, guid: c60a96be11695c14c9f85bd8cb6aff05, type: 3}
+  increaseSprite: {fileID: 21300000, guid: 3910b01bdc73b7a4ba9df21d803e1e40, type: 3}
 --- !u!1 &2686788085504945406
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +369,7 @@ GameObject:
   - component: {fileID: 3992808932693681502}
   - component: {fileID: 4729944593022763452}
   m_Layer: 10
-  m_Name: Progress
+  m_Name: Needs Progress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,7 +443,7 @@ GameObject:
   - component: {fileID: 7105058184847984927}
   - component: {fileID: 9106560906912864023}
   m_Layer: 10
-  m_Name: Dog State
+  m_Name: Satisfaction Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

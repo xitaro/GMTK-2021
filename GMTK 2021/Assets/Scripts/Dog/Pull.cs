@@ -3,11 +3,13 @@
 public class Pull : MonoBehaviour
 {
     private Transform owner;
+    [SerializeField] private Rigidbody ownerRb;
     [SerializeField] private float maxDistance;
     [SerializeField] private float pullForce;
     private void Awake()
     {
         owner = GameObject.Find("Owner").transform;
+        ownerRb = owner.GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
@@ -28,7 +30,6 @@ public class Pull : MonoBehaviour
     private void ContinuousPull()
     {
         Vector3 pullDirection = (transform.position - owner.position).normalized;
-        Rigidbody ownerRb = owner.GetComponent<Rigidbody>();
-        ownerRb.AddForce(pullDirection * pullForce, ForceMode.Impulse);
+        ownerRb.AddForce(pullDirection * pullForce , ForceMode.Impulse);
     }
 }
