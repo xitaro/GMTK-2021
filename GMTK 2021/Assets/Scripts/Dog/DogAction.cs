@@ -8,6 +8,7 @@ public class DogAction : MonoBehaviour
     [SerializeField] Ground ground;
     [SerializeField] private float timePerformingAction;
     [SerializeField] Animator anim;
+    [SerializeField] Anger ownerAnger;
 
     [SerializeField] NeedsManager needsManager;
 
@@ -20,14 +21,19 @@ public class DogAction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == needsManager.goalGameObject)
-        {
-            needsManager.TaskCompleted();
-        }
+        Interactable interactable = other.GetComponent<Interactable>();
         
-        Interactable interactable = other.GetComponent<Interactable>(); 
         if (interactable != null)
         {
+            if (other.CompareTag("Obstacle"))
+            {
+                ownerAnger.IncreaseAnger();
+            }
+            else if (interactable.animation == needsManager.need)
+            {
+                needsManager.TaskCompleted();
+            }
+
             PerformAction(interactable.animation);
             other.isTrigger = false;
             other.GetComponent<Rigidbody>().isKinematic = true;

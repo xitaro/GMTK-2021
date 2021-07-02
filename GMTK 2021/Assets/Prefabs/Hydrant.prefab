@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7055693606081081550}
   - component: {fileID: 7055693606081081544}
   - component: {fileID: 4047530860009130216}
-  - component: {fileID: 5684324508318965505}
+  - component: {fileID: 5466864641818831210}
   m_Layer: 12
   m_Name: Hydrant
   m_TagString: Item
@@ -159,7 +159,7 @@ CapsuleCollider:
   m_Height: 4.0840397
   m_Direction: 1
   m_Center: {x: 0, y: 2.222628, z: -0.094021656}
---- !u!114 &5684324508318965505
+--- !u!114 &5466864641818831210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

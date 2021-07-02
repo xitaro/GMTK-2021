@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
         if(currentGameDistance >= endGameDistance)
         {
             // Ganhou o level!
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Debug.Log("Ganhou");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         }
     }
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Perder = Restart");
     }
 
     public void QuitGame()

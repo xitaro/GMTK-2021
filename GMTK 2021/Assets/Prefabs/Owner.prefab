@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6066736199682637264}
   - component: {fileID: 5245106203122377688}
   m_Layer: 10
-  m_Name: Owner State
+  m_Name: Anger Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,8 +87,8 @@ GameObject:
   - component: {fileID: 2916924724142600249}
   - component: {fileID: 2916924724142600226}
   - component: {fileID: 2916924724142600228}
-  - component: {fileID: 3891739041146685131}
   - component: {fileID: 2141265122}
+  - component: {fileID: 6997445860051702223}
   m_Layer: 10
   m_Name: Owner
   m_TagString: Untagged
@@ -172,20 +172,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3891739041146685131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2916924724142600250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d1e410839d20c94cafc358f5a6c1422, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateImage: {fileID: 5245106203122377688}
-  gm: {fileID: 0}
 --- !u!114 &2141265122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +187,19 @@ MonoBehaviour:
   target: {fileID: 0}
   offSet: {x: 0, y: 0, z: 0}
   speed: 0.5
+--- !u!114 &6997445860051702223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2916924724142600250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adfbf16b4d739a4ca1509125fafb7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angerImage: {fileID: 5245106203122377688}
 --- !u!1 &3438595768945659580
 GameObject:
   m_ObjectHideFlags: 0

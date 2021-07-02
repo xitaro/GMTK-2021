@@ -4,11 +4,18 @@ using System.Collections;
 
 public class Satisfaction : MonoBehaviour
 {
+    private GameManager gm;
+
     private int level = 3;
 
     [SerializeField] private Image satisfactionImage;
     [SerializeField] private Sprite[] satisfactionSprites;
     [SerializeField] private Sprite increaseSprite;
+
+    private void Awake()
+    {
+        gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+    }
 
     private void Start()
     {
@@ -19,7 +26,7 @@ public class Satisfaction : MonoBehaviour
     {
         level -= 1;
         CheckSatisfaction();
-        ShowCurrentState();
+        ShowCurrentSatisfaction();
         StartCoroutine(HideUI());
     }
 
@@ -27,17 +34,17 @@ public class Satisfaction : MonoBehaviour
     {
         level += 1;
         CheckSatisfaction();
-        ShowIncreasingState();
+        ShowIncreasingSatisfaction();
         StartCoroutine(HideUI());
     }
 
-    private void ShowCurrentState()
+    private void ShowCurrentSatisfaction()
     {
         satisfactionImage.sprite = satisfactionSprites[level];
         satisfactionImage.gameObject.SetActive(true);
     }
     
-    private void ShowIncreasingState()
+    private void ShowIncreasingSatisfaction()
     {
         satisfactionImage.sprite = increaseSprite;
         satisfactionImage.gameObject.SetActive(true);
@@ -51,7 +58,7 @@ public class Satisfaction : MonoBehaviour
         }
         else if (level <= 0)
         {
-            //GameOver
+            gm.GameOver();
         }
     }
 

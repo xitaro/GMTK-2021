@@ -15,6 +15,7 @@ public class NeedsManager : MonoBehaviour
     [SerializeField] private Image progressBar;
 
     public GameObject goalGameObject = null;
+    public string need = null;
 
     private Satisfaction dogSatisfaction;
 
@@ -32,7 +33,7 @@ public class NeedsManager : MonoBehaviour
         
         taskImage.SetActive(false);
 
-        StartCoroutine(TimerToNewGoal(10));
+        StartCoroutine(TimerToNewGoal(8));
     }
 
 
@@ -54,17 +55,28 @@ public class NeedsManager : MonoBehaviour
     private void DefineGoal()
     {
         //Get all items in scene
+        //CRIAR UM OVERLAP BOX E VERIFICAR SE TEM ITENS DENTRO DELE
+        //INVÉS DE ATIVO NA CENA
         GameObject[] allItens = GameObject.FindGameObjectsWithTag("Item");
-        //Sort some random number 
-        int r = Random.Range(0, allItens.Length);
-        //Define next item as goal
-        goalGameObject = allItens[r];
-        // Activate pop up
-        taskImage.SetActive(true);
-        // Start task
-        taskInProgress = true;
-        //Reset time
-        taskTime = startTime;
+        if (allItens.Length > 0)
+        {
+            //Sort some random number 
+            int r = Random.Range(0, allItens.Length);
+            //Define next item as goal
+            goalGameObject = allItens[r];
+            need = allItens[r].GetComponent<Interactable>().animation;
+            // Activate pop up
+            taskImage.SetActive(true);
+            // Start task
+            taskInProgress = true;
+            //Reset time
+            taskTime = startTime;
+        }
+        else
+        {
+            DefineGoal();
+        }
+        
     }
 
     private IEnumerator TimerToNewGoal(float waitTime)

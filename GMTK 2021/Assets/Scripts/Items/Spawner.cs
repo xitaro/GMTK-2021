@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class ItemSpawner : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
 	[System.Serializable]
 	public class Wave
@@ -10,19 +10,19 @@ public class ItemSpawner : MonoBehaviour
 		public GameObject[] items;
 		public int numberOfItems;
 		private float timeBetweenSpawns;
-		public float minTime;
-		public float maxTime;
-
+		[SerializeField] private float timeBetweenWaves;
+		public float TimeBetweenWaves { get { return timeBetweenWaves; } }
+		[SerializeField] private float minTime;
+		[SerializeField] private float maxTime;
 		public float CalculateTimeBetweenSpawns()
-		{
+        {
 			timeBetweenSpawns = Random.Range(minTime, maxTime);
 			return timeBetweenSpawns;
-		}
+        }
 	}
 
 	public Wave[] waves;
 	public Transform[] itemSpawnPoints;
-	public float timeBetweenWaves;
 
 	private void Start()
 	{
@@ -33,6 +33,8 @@ public class ItemSpawner : MonoBehaviour
 	{
 		for (int i = 0; i < waves.Length; i++)
 		{
+			yield return new WaitForSeconds(waves[i].TimeBetweenWaves);
+
 			for (int h = 0; h < waves[i].numberOfItems; h++)
 			{
 				Transform spawnPoint = itemSpawnPoints[Random.Range(0, itemSpawnPoints.Length)];
@@ -40,11 +42,7 @@ public class ItemSpawner : MonoBehaviour
 				Instantiate(item, spawnPoint);
 				yield return new WaitForSeconds(waves[i].CalculateTimeBetweenSpawns());
 			}
-			if (i == waves.Length - 1)
-			{
-				i--;
-			}
-			yield return new WaitForSeconds(timeBetweenWaves);
+			//yield return new WaitForSeconds(timeBetweenWaves);
 		}
 		print("Game Finished");
 	}
