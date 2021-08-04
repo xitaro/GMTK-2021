@@ -1731,7 +1731,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1916758087}
-  - component: {fileID: 1916758088}
   - component: {fileID: 1916758089}
   m_Layer: 0
   m_Name: Obstacle Spawner
@@ -1754,32 +1753,6 @@ Transform:
   m_Father: {fileID: 2005329770}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1916758088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1916758086}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f24fd06606d3fcc4eb7958011cbf7dfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waves:
-  - obstacles:
-    - {fileID: 7055693606081081558, guid: 18693705a82704949872346b23e5033f, type: 3}
-    - {fileID: 7055693606081081558, guid: 8bd3981b6875a3b45a3c07b2ae5849b3, type: 3}
-    numberOfObstacles: 10
-    minTime: 5
-    maxTime: 7
-  obstacleSpawnPoints:
-  - {fileID: 1035760502}
-  - {fileID: 1575836039}
-  - {fileID: 1739658441}
-  - {fileID: 1391990672}
-  - {fileID: 2111222664}
-  timeBetweenWaves: 5
 --- !u!114 &1916758089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2301,6 +2274,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 592a81a5069849144909ac541889cb6e, type: 2}
+    - target: {fileID: 1971039762075374458, guid: 740d9d880bde5ed468e05356e9d1a193,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971039762075374458, guid: 740d9d880bde5ed468e05356e9d1a193,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 0.996
+      objectReference: {fileID: 0}
     - target: {fileID: 2220735574251947242, guid: 740d9d880bde5ed468e05356e9d1a193,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2401,6 +2384,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 592a81a5069849144909ac541889cb6e, type: 2}
+    - target: {fileID: 4729944593022763452, guid: 740d9d880bde5ed468e05356e9d1a193,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729944593022763452, guid: 740d9d880bde5ed468e05356e9d1a193,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729944593022763452, guid: 740d9d880bde5ed468e05356e9d1a193,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729944593022763452, guid: 740d9d880bde5ed468e05356e9d1a193,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8005369067818544099, guid: 740d9d880bde5ed468e05356e9d1a193,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
