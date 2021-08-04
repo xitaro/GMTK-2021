@@ -14,6 +14,8 @@ public class NeedsManager : MonoBehaviour
     [SerializeField] private GameObject taskImage;
     [SerializeField] private Image progressBar;
 
+    private GameObject[] allItens;
+
     public GameObject goalGameObject = null;
     public string need = null;
 
@@ -57,7 +59,7 @@ public class NeedsManager : MonoBehaviour
         //Get all items in scene
         //CRIAR UM OVERLAP BOX E VERIFICAR SE TEM ITENS DENTRO DELE
         //INVÉS DE ATIVO NA CENA
-        GameObject[] allItens = GameObject.FindGameObjectsWithTag("Item");
+        allItens = GameObject.FindGameObjectsWithTag("Item");
         if (allItens.Length > 0)
         {
             //Sort some random number 
@@ -76,7 +78,8 @@ public class NeedsManager : MonoBehaviour
         {
             DefineGoal();
         }
-        
+
+        allItens = null;
     }
 
     private IEnumerator TimerToNewGoal(float waitTime)
