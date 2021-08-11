@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animation: DrinkWater
+  sprite: {fileID: 21300000, guid: 572e3b4d6deed6c48b0c034ad5caf731, type: 3}
 --- !u!135 &6345403549488480511
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -1785,12 +1785,18 @@ MonoBehaviour:
   - {fileID: 1739658441}
   - {fileID: 1391990672}
   - {fileID: 2111222664}
---- !u!1 &1983882173 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1794791191598466076, guid: 740d9d880bde5ed468e05356e9d1a193,
+--- !u!114 &1983882175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1971039762075374458, guid: 740d9d880bde5ed468e05356e9d1a193,
     type: 3}
   m_PrefabInstance: {fileID: 1384410567112638133}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2005329769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,9 +1988,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497cf7e2ef7d76541a63c0a2bc888279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 8
+  startTime: 7
   timeToNextGoal: 10
-  taskImage: {fileID: 1983882173}
+  taskImage: {fileID: 1983882175}
   progressBar: {fileID: 1397715053}
   goalGameObject: {fileID: 0}
   need: 

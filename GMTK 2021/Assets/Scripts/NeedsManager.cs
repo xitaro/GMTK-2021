@@ -11,13 +11,13 @@ public class NeedsManager : MonoBehaviour
     [SerializeField] private float timeToNextGoal;
     #endregion
 
-    [SerializeField] private GameObject taskImage;
+    [SerializeField] private Image taskImage;
     [SerializeField] private Image progressBar;
 
     private GameObject[] allItens;
 
     public GameObject goalGameObject = null;
-    public string need = null;
+    public string need;
 
     private Satisfaction dogSatisfaction;
 
@@ -33,7 +33,7 @@ public class NeedsManager : MonoBehaviour
     {
         taskTime = startTime;
         
-        taskImage.SetActive(false);
+        taskImage.gameObject.SetActive(false);
 
         StartCoroutine(TimerToNewGoal(8));
     }
@@ -45,9 +45,10 @@ public class NeedsManager : MonoBehaviour
     {
        if (taskInProgress)
         {
-            taskTime -= Time.deltaTime;
+            //Reduce fill amount over 30 seconds
+            progressBar.fillAmount -= 1.0f / taskTime * Time.deltaTime;
 
-            if (taskTime <= 0)
+            if (progressBar.fillAmount <= 0)
             {
                 TaskFailed();
             }
@@ -64,11 +65,15 @@ public class NeedsManager : MonoBehaviour
         {
             //Sort some random number 
             int r = Random.Range(0, allItens.Length);
+
             //Define next item as goal
             goalGameObject = allItens[r];
-            need = allItens[r].GetComponent<Interactable>().animation;
+            Interactable obj = allItens[r].GetComponent<Interactable>();
+            need = obj.animation;
+            taskImage.sprite = obj.sprite;
+
             // Activate pop up
-            taskImage.SetActive(true);
+            taskImage.gameObject.SetActive(true);
             // Start task
             taskInProgress = true;
             //Reset time
@@ -95,7 +100,7 @@ public class NeedsManager : MonoBehaviour
         // Increase dog's satisfaction
         dogSatisfaction.IncreaseSatisfaction();
         // Disable pop up
-        taskImage.SetActive(false);
+        taskImage.gameObject.SetActive(false);
         //
         StartCoroutine(TimerToNewGoal(timeToNextGoal));
     }
@@ -107,7 +112,7 @@ public class NeedsManager : MonoBehaviour
         // Decrease dog's satisfaction
         dogSatisfaction.DecreaseSatisfaction();
         // Disable pop up
-        taskImage.SetActive(false);
+        taskImage.gameObject.SetActive(false);
         //Define new Goal
         StartCoroutine(TimerToNewGoal(timeToNextGoal));
     }

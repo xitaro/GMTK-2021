@@ -172,3 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animation: Poop
+  sprite: {fileID: 21300000, guid: 37221a01afc5eda4e9bda53c5fd640cd, type: 3}

@@ -6,5 +6,8 @@ public class Interactable : MonoBehaviour
 {
     // Animation to the dog to perform
     public string animation;
+    // Task sprite image
+    public Sprite sprite;
+
 
 }

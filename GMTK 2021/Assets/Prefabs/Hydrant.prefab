@@ -172,3 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animation: Pee
+  sprite: {fileID: 21300000, guid: 00c68dead88b30b4bb7466ce02cabbb0, type: 3}
